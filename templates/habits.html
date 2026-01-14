@@ -7,14 +7,17 @@
 </head>
 <body>
   <div class="container">
-    <h1>Create your habits</h1>
+    <h1>It all starts with your habits.</h1>
 
     <form method="POST" class="form-row">
-      <input type="text" name="name" placeholder="Habit name" required>
+      <input type="text" name="name" placeholder="Habit name" required oninput="this.value = this.value.toLowerCase()">
 
       <select name="type" required>
-        <option value="start">Start (begin a habit)</option>
-        <option value="cut">Cut (eliminate a habit)</option>
+        <option value="" disabled selected hidden>
+          Choose type
+        </option>
+        <option value="start">To Start</option>
+        <option value="cut">To Eliminate</option>
       </select>
 
       <button class="btn" type="submit">Add Habit</button>
@@ -25,7 +28,13 @@
     <ul class="list">
       {% for h in habits %}
         <li class="habit-item">
-          <span>{{ h["name"] }} ({{ h["type"] }})</span>
+          {% if h["type"] == "start" %}
+            <span class="tag start">Start</span>
+          {% else %}
+            <span class="tag eliminate">Eliminate</span>
+          {% endif %}
+
+          <span class="habit-name">{{ h["name"] }}</span>
 
           <form method="POST" action="/habits/delete" class="delete-form">
             <input type="hidden" name="habit_id" value="{{ h['id'] }}">
@@ -42,4 +51,9 @@
     <a class="link" href="/system">← Back to Dashboard</a>
   </div>
 </body>
+<header class="top-bar">
+  <a href="/" class="logo-link">
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo">
+  </a>
+</header>
 </html>

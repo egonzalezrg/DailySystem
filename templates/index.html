@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DreamLife Achiever</title>
+  <title>DailySystem</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
   <div class="container">
-    <h1>DreamLife Achiever</h1>
+    <h1>DailySystem</h1>
 
     <p class="quote">
       “We start young and think that motivation is the key to success,
@@ -18,10 +18,15 @@
     </p>
 
     <div class="actions">
-      <a class="btn" href="/system">Start Building Your System</a>
+      <a class="btn" href="/system">Ready to Build my System</a>
     </div>
 
-    <div class="subtitle">Small wins. Consistent systems. Real progress.</div>
+    <div class="subtitle">Win your days. Win your weeks. Win your year.</div>
   </div>
 </body>
+<header class="top-bar">
+  <a href="/" class="logo-link">
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo">
+  </a>
+</header>
 </html>

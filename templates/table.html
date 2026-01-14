@@ -7,7 +7,7 @@
 </head>
 <body>
   <div class="container">
-    <h1>Your habit table</h1>
+    <h1>The Tracker.</h1>
 
     <div class="week-nav">
       <a class="btn" href="{{ url_for('table', week=prev_week) }}">◀ Previous</a>
@@ -20,6 +20,7 @@
         <thead>
           <tr>
             <th>Habit</th>
+            <th>Type</th>
             {% for day in week %}
               <th class="{% if day.is_today %}today{% endif %}">
                 {{ day.label }}
@@ -31,7 +32,14 @@
         <tbody>
           {% for h in habits %}
           <tr>
-            <td>{{ h["name"] }} ({{ h["type"] }})</td>
+            <td>{{ h["name"] }}</td>
+            <td class="type-col">
+              {% if h["type"] == "start" %}
+                <span class="tag start">To Start</span>
+              {% else %}
+                <span class="tag eliminate">To Eliminate</span>
+              {% endif %}
+            </td>
 
             {% for day in week %}
               <td>
@@ -63,4 +71,9 @@
     <a class="link" href="/system">← Back to Dashboard</a>
   </div>
 </body>
+<header class="top-bar">
+  <a href="/" class="logo-link">
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo">
+  </a>
+</header>
 </html>
