@@ -40,32 +40,24 @@ Python 3.10+ recommended
 Flask
 
 Setup & Run on Windows (local)
-  pytohn -m venv venv
-  venv\Scripts\activate
-  pip install flask
-  python app.py
+  - pytohn -m venv venv
+  - venv\Scripts\activate
+  - pip install flask
+  - python app.py
 
 Setup & Run on macOS / Linux (local)
-  python3 -m venv venv
-  source venv/bin/activate
-  pip install flask
-  python app.py
+  - python3 -m venv venv
+  - source venv/bin/activate
+  - pip install flask
+  - python app.py
 
 Then open your browser and go to:
 http://127.0.0.1:5000 
 
 # Project structure currently
-.
-├── app.py
-├── schema.sql
-├── static/
-│   └── styles.css
-├── templates/
-│   ├── index.html
-│   ├── system.html
-│   ├── habits.html
-│   └── table.html
-└── README.md
+
+<img width="238" height="323" alt="image" src="https://github.com/user-attachments/assets/e32dfe76-9b20-48c3-96c8-ff6e88069376" />
+
 
 # Future plans
 
