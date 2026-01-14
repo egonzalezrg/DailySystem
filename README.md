@@ -15,6 +15,15 @@ This repository represents the foundation of a larger personal system that will 
 - Delete habits cleanly along with their history
 - Simple, distraction-free UI focused on consistency
 
+Landing page:
+<img width="1298" height="636" alt="image" src="https://github.com/user-attachments/assets/0cba4d61-14e0-4a91-a1a4-f142512f0c24" />
+Habit Management page:
+<img width="1404" height="752" alt="image" src="https://github.com/user-attachments/assets/b0049d72-63ad-4ac4-9b35-d4c2977bed78" />
+Tracking page:
+<img width="1362" height="742" alt="image" src="https://github.com/user-attachments/assets/e2472c63-fec7-448f-9598-d73fe7d05617" />
+
+
+
 The system uses real calendar dates, allowing progress to be tracked reliably across weeks, months, and years.
 
 # The Why? for this project
@@ -53,6 +62,7 @@ Setup & Run on macOS / Linux (local)
 
 Then open your browser and go to:
 http://127.0.0.1:5000 
+
 
 # Project structure currently
 
