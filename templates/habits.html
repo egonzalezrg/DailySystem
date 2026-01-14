@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Habits</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Create your habits</h1>
+
+    <form method="POST" class="form-row">
+      <input type="text" name="name" placeholder="Habit name" required>
+
+      <select name="type" required>
+        <option value="start">Start (begin a habit)</option>
+        <option value="cut">Cut (eliminate a habit)</option>
+      </select>
+
+      <button class="btn" type="submit">Add Habit</button>
+    </form>
+
+    <p class="subtitle">Your habits</p>
+
+    <ul class="list">
+      {% for h in habits %}
+        <li class="habit-item">
+          <span>{{ h["name"] }} ({{ h["type"] }})</span>
+
+          <form method="POST" action="/habits/delete" class="delete-form">
+            <input type="hidden" name="habit_id" value="{{ h['id'] }}">
+            <button type="submit" class="trash-btn" title="Delete habit">
+              🗑️
+            </button>
+          </form>
+        </li>
+      {% else %}
+        <li>No habits yet.</li>
+      {% endfor %}
+    </ul>
+
+    <a class="link" href="/system">← Back to Dashboard</a>
+  </div>
+</body>
+</html>

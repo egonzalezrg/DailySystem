@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Habit Table</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Your habit table</h1>
+
+    <div class="week-nav">
+      <a class="btn" href="{{ url_for('table', week=prev_week) }}">◀ Previous</a>
+      <a class="btn" href="{{ url_for('table', week=this_week) }}">Today</a>
+      <a class="btn" href="{{ url_for('table', week=next_week) }}">Next ▶</a>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Habit</th>
+            {% for day in week %}
+              <th class="{% if day.is_today %}today{% endif %}">
+                {{ day.label }}
+              </th>
+            {% endfor %}
+          </tr>
+        </thead>
+
+        <tbody>
+          {% for h in habits %}
+          <tr>
+            <td>{{ h["name"] }} ({{ h["type"] }})</td>
+
+            {% for day in week %}
+              <td>
+                <form method="POST" action="/toggle" class="no-gap">
+                  <input type="hidden" name="habit_id" value="{{ h['id'] }}">
+                  <input type="hidden" name="check_date" value="{{ day.iso }}">
+                  <input type="hidden" name="week_start" value="{{ week_start }}">
+
+                  <button class="check-btn" type="submit">
+                    {% if done.get((h['id'], day.iso), False) %}
+                      ✅
+                    {% else %}
+                      ⬜
+                    {% endif %}
+                  </button>
+                </form>
+              </td>
+            {% endfor %}
+          </tr>
+          {% else %}
+          <tr>
+            <td colspan="8">No habits yet. Go create some first.</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <a class="link" href="/system">← Back to Dashboard</a>
+  </div>
+</body>
+</html>

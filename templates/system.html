@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Your Dashboard</h1>
+
+    <p class="quote" style="margin-bottom: 18px;">
+      Step 1: Create habits you want to build or eliminate.<br>
+      Step 2: Track them consistently in your system.
+    </p>
+
+    <div class="actions">
+      <a class="btn" href="/habits">Create / Edit Habits</a>
+      <a class="btn" href="/table">Go to Habit Table</a>
+    </div>
+
+    <a class="link" href="/">← Back Home</a>
+  </div>
+</body>
+</html>
