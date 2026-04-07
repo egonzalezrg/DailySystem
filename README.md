@@ -43,7 +43,7 @@ By keeping the interface simple and focusing on daily consistency, the app encou
 
 The project is intentionally lightweight and beginner-friendly while following clean structure and best practices.
 
-# Requirements for Running the project lgood?ocally
+# Requirements for Running the project locally
 
 Python 3.10+ recommended
 Flask
