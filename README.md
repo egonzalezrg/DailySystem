@@ -49,13 +49,12 @@ Python 3.10+ recommended
 Flask
 
 Setup & Run on Windows (local)
-  - pytohn -m venv venv
+  - python -m venv venv
   - venv\Scripts\activate
-      Troubleshooting (in Windows PowerShell only)
-      - If you get an error about scripts being disabled when activating the virtual environment, run:
+      - Troubleshooting (in Windows PowerShell only): If you get an error about scripts being disabled when activating the virtual environment, run:
         Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
   - pip install flask
-  - python app.pya
+  - python app.py
 
 Setup & Run on macOS / Linux (local)
   - python3 -m venv venv
